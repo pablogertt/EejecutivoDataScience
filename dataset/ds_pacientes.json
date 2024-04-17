@@ -30,7 +30,7 @@
 			"location": {
 				"type": "HttpServerLocation",
 				"relativeUrl": {
-					"value": "@?action=dataset().action&hapipkey=dataset().hapikey&object=dataset().object",
+					"value": "@concat('/?action=',dataset().action,'&hapikey=',dataset().hapikey,'&object=',dataset().object)",
 					"type": "Expression"
 				}
 			}
