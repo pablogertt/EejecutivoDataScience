@@ -10,11 +10,29 @@
 				"hapikey": "pat-na1-bb548bcc-957f-47ee-b49c-bbcb46f2c513"
 			}
 		},
+		"parameters": {
+			"action": {
+				"type": "string",
+				"defaultValue": "getRecords"
+			},
+			"object": {
+				"type": "string",
+				"defaultValue": "contacts"
+			},
+			"hapikey": {
+				"type": "string",
+				"defaultValue": "pat-na1-bb548bcc-957f-47ee-b49c-bbcb46f2c513"
+			}
+		},
 		"annotations": [],
 		"type": "Json",
 		"typeProperties": {
 			"location": {
-				"type": "HttpServerLocation"
+				"type": "HttpServerLocation",
+				"relativeUrl": {
+					"value": "@?action=dataset().action&hapipkey=dataset().hapikey&object=dataset().object",
+					"type": "Expression"
+				}
 			}
 		},
 		"schema": {}
