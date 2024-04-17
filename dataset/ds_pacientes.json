@@ -28,11 +28,7 @@
 		"type": "Json",
 		"typeProperties": {
 			"location": {
-				"type": "HttpServerLocation",
-				"relativeUrl": {
-					"value": "@concat('/?action=',dataset().action,'&hapikey=',dataset().hapikey,'&object=',dataset().object)",
-					"type": "Expression"
-				}
+				"type": "HttpServerLocation"
 			}
 		},
 		"schema": {}
