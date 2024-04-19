@@ -1,25 +1,17 @@
 {
-	"name": "ds_badges_csv",
+	"name": "ds_users_csv",
 	"properties": {
 		"linkedServiceName": {
 			"referenceName": "ADLS_LinkedService",
 			"type": "LinkedServiceReference"
-		},
-		"parameters": {
-			"folder": {
-				"type": "string"
-			},
-			"filename": {
-				"type": "string"
-			}
 		},
 		"annotations": [],
 		"type": "DelimitedText",
 		"typeProperties": {
 			"location": {
 				"type": "AzureBlobFSLocation",
-				"fileName": "sk_badges.csv",
-				"folderPath": "sharedknow/badges",
+				"fileName": "sk_users.csv",
+				"folderPath": "sharedknow/users",
 				"fileSystem": "raw"
 			},
 			"columnDelimiter": "|",
@@ -27,6 +19,11 @@
 			"firstRowAsHeader": true,
 			"quoteChar": "\""
 		},
-		"schema": []
+		"schema": [
+			{
+				"name": "\"Id\"|\"CreationDate\"|\"DownVotes\"|\"LastAccessDate\"|\"Reputation\"|\"UpVotes\"|\"Views\"|\"AccountId\"|\"Email\"",
+				"type": "String"
+			}
+		]
 	}
 }
