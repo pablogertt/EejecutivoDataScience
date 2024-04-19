@@ -6,7 +6,7 @@
 			"sources": [
 				{
 					"dataset": {
-						"referenceName": "ds_badges_csv",
+						"referenceName": "ds_source_csv",
 						"type": "DatasetReference"
 					},
 					"name": "source1"

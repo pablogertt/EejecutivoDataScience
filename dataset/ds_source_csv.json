@@ -1,5 +1,5 @@
 {
-	"name": "ds_badges_csv",
+	"name": "ds_source_csv",
 	"properties": {
 		"linkedServiceName": {
 			"referenceName": "ADLS_LinkedService",
@@ -18,8 +18,14 @@
 		"typeProperties": {
 			"location": {
 				"type": "AzureBlobFSLocation",
-				"fileName": "sk_badges.csv",
-				"folderPath": "sharedknow/badges",
+				"fileName": {
+					"value": "@dataset().filename",
+					"type": "Expression"
+				},
+				"folderPath": {
+					"value": "@dataset().folder",
+					"type": "Expression"
+				},
 				"fileSystem": "raw"
 			},
 			"columnDelimiter": "|",

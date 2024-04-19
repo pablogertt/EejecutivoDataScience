@@ -1,0 +1,47 @@
+{
+	"name": "pl_users_csv2avro",
+	"properties": {
+		"activities": [
+			{
+				"name": "Copy data1",
+				"type": "Copy",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "0.12:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"sink": {
+						"type": "AvroSink",
+						"storeSettings": {
+							"type": "AzureBlobFSWriteSettings",
+							"copyBehavior": "FlattenHierarchy"
+						},
+						"formatSettings": {
+							"type": "AvroWriteSettings"
+						}
+					},
+					"enableStaging": false
+				},
+				"outputs": [
+					{
+						"referenceName": "ds_sink_avro",
+						"type": "DatasetReference",
+						"parameters": {
+							"folder": "/sharedknow/users",
+							"filename": "ds_users.avro"
+						}
+					}
+				]
+			}
+		],
+		"folder": {
+			"name": "02_landing"
+		},
+		"annotations": []
+	}
+}

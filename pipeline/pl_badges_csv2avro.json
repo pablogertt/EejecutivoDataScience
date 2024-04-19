@@ -1,5 +1,5 @@
 {
-	"name": "master_party_core",
+	"name": "pl_badges_csv2avro",
 	"properties": {
 		"activities": [
 			{
@@ -29,7 +29,8 @@
 					"sink": {
 						"type": "AvroSink",
 						"storeSettings": {
-							"type": "AzureBlobFSWriteSettings"
+							"type": "AzureBlobFSWriteSettings",
+							"copyBehavior": "FlattenHierarchy"
 						},
 						"formatSettings": {
 							"type": "AvroWriteSettings"
@@ -47,20 +48,28 @@
 				},
 				"inputs": [
 					{
-						"referenceName": "ds_badges_csv",
-						"type": "DatasetReference"
+						"referenceName": "ds_source_csv",
+						"type": "DatasetReference",
+						"parameters": {
+							"folder": "/sharedknow/badges",
+							"filename": "ds_badges.csv"
+						}
 					}
 				],
 				"outputs": [
 					{
 						"referenceName": "ds_sink_avro",
-						"type": "DatasetReference"
+						"type": "DatasetReference",
+						"parameters": {
+							"folder": "/sharedknow/badges",
+							"filename": "ds_badges.avro"
+						}
 					}
 				]
 			}
 		],
 		"folder": {
-			"name": "02_master_models"
+			"name": "02_landing"
 		},
 		"annotations": [],
 		"lastPublishTime": "2024-04-05T02:55:46Z"

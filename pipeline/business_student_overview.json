@@ -2,7 +2,7 @@
 	"name": "business_student_overview",
 	"properties": {
 		"folder": {
-			"name": "03_business_reports"
+			"name": "03_raw_datavault"
 		},
 		"annotations": [],
 		"lastPublishTime": "2024-04-05T02:55:46Z"
