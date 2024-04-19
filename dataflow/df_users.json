@@ -1,15 +1,15 @@
 {
-	"name": "dataflow1",
+	"name": "df_users",
 	"properties": {
 		"type": "MappingDataFlow",
 		"typeProperties": {
 			"sources": [
 				{
 					"dataset": {
-						"referenceName": "ds_source_csv",
+						"referenceName": "ds_sink_avro",
 						"type": "DatasetReference"
 					},
-					"name": "source1"
+					"name": "UserSource"
 				}
 			],
 			"sinks": [],
@@ -17,7 +17,7 @@
 			"scriptLines": [
 				"source(allowSchemaDrift: true,",
 				"     validateSchema: false,",
-				"     ignoreNoFilesFound: false) ~> source1"
+				"     ignoreNoFilesFound: false) ~> UserSource"
 			]
 		}
 	}

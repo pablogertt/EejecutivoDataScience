@@ -52,7 +52,7 @@
 						"type": "DatasetReference",
 						"parameters": {
 							"folder": "/sharedknow/users",
-							"filename": "ds_users.csv"
+							"filename": "sk_users.csv"
 						}
 					}
 				],
@@ -62,7 +62,7 @@
 						"type": "DatasetReference",
 						"parameters": {
 							"folder": "/sharedknow/users",
-							"filename": "ds_users.avro"
+							"filename": "users.avro"
 						}
 					}
 				]
